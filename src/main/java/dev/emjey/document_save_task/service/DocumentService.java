@@ -27,4 +27,6 @@ public interface DocumentService {
     List<Document> getAllDocuments();
 
     void deleteDocument(Long id);
+
+    List<Document> searchDocumentsByTranslation(String word);
 }

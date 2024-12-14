@@ -55,4 +55,10 @@ public class DocumentController {
         documentService.deleteDocument(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<Document>> searchDocumentsByTranslation(@RequestParam("word") String word) {
+        List<Document> documents = documentService.searchDocumentsByTranslation(word);
+        return ResponseEntity.ok(documents);
+    }
 }
